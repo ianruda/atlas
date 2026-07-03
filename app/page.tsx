@@ -2,154 +2,103 @@
 
 import { useState } from "react";
 
-const services = ["Lawn Care", "Mulching", "Hedge Trimming", "Leaf Cleanup"];
-
-const reviews = [
-  "Fast response, fair pricing, and the yard looked great.",
-  "Andy did a great job cleaning up our property before summer.",
-  "Reliable, easy to contact, and professional work.",
-];
-
 export default function Home() {
-  const [sliderPosition, setSliderPosition] = useState(50);
+  const [slider, setSlider] = useState(50);
+
+  const services = [
+    "Lawn mowing",
+    "Mulching",
+    "Hedge trimming",
+    "Spring cleanup",
+    "Fall cleanup",
+    "Driveway edging",
+  ];
+
+  const reviews = [
+    "Andy showed up fast, did clean work, and made the yard look brand new.",
+    "Great communication, fair pricing, and the cleanup was perfect.",
+    "Reliable, professional, and the before and after difference was huge.",
+  ];
 
   return (
-    <main className="min-h-screen bg-[#05081A] text-white scroll-smooth">
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#05081A]/80 border-b border-white/10 px-8 md:px-12 py-5">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h2 className="text-2xl md:text-3xl font-black tracking-tight">
-            Andy&apos;s Lawn & Landscape
-          </h2>
-
-          <a
-            href="#contact"
-            className="bg-white text-slate-950 px-5 py-3 rounded-full font-bold hover:bg-blue-500 hover:text-white transition"
-          >
-            Free Estimate
-          </a>
-        </div>
-      </nav>
-
-      <section className="relative overflow-hidden px-8 md:px-12 py-20 md:py-28">
-        <div className="absolute top-20 right-0 h-96 w-96 bg-blue-600/30 blur-[120px] rounded-full" />
-
-        <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <main className="min-h-screen bg-neutral-950 text-white">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12">
+        <div className="mx-auto max-w-7xl grid gap-12 md:grid-cols-2 items-center">
           <div>
-            <p className="uppercase tracking-[6px] text-blue-400 font-bold text-sm">
-              Bucksport • Maine
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
+              Bucksport, Maine
             </p>
 
-            <h1 className="text-6xl md:text-8xl font-black leading-[0.95] mt-6 tracking-tight">
-              Make Your Yard Look Sharp Again
+            <h1 className="text-5xl md:text-7xl font-black leading-tight">
+              Premium lawn care that makes your property look sharp.
             </h1>
 
-            <p className="text-gray-300 text-xl mt-8 leading-relaxed max-w-xl">
-              Lawn care, mulching, hedge trimming, and seasonal cleanups for
-              homeowners around Bucksport.
+            <p className="mt-6 text-lg text-neutral-300 max-w-xl">
+              Andy&apos;s Lawn & Landscape provides clean, reliable lawn care,
+              mulching, trimming, and seasonal cleanup for homes around
+              Bucksport, Maine.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <a
-                href="#contact"
-                className="bg-blue-600 px-8 py-4 rounded-full text-lg font-bold text-center hover:bg-blue-500 transition"
-              >
-                Get Free Estimate
-              </a>
-
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:2076595940"
-                className="border border-white/20 px-8 py-4 rounded-full text-lg font-bold text-center hover:bg-white hover:text-slate-950 transition"
+                className="rounded-full bg-green-500 px-8 py-4 font-bold text-black hover:bg-green-400"
               >
-                Call (207) 659-5940
+                Call Andy
+              </a>
+              <a
+                href="#work"
+                className="rounded-full border border-white/20 px-8 py-4 font-bold hover:bg-white hover:text-black"
+              >
+                See Work
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-10 text-sm text-gray-300">
-              <span className="bg-white/10 px-4 py-2 rounded-full">⭐ Local Business</span>
-              <span className="bg-white/10 px-4 py-2 rounded-full">🌲 Bucksport</span>
-              <span className="bg-white/10 px-4 py-2 rounded-full">🍂 Seasonal Cleanup</span>
+            <div className="mt-10 grid grid-cols-3 gap-4 text-center">
+              <div className="rounded-2xl bg-white/5 p-4 border border-white/10">
+                <p className="text-3xl font-black">5★</p>
+                <p className="text-sm text-neutral-400">Local service</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 p-4 border border-white/10">
+                <p className="text-3xl font-black">24hr</p>
+                <p className="text-sm text-neutral-400">Fast replies</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 p-4 border border-white/10">
+                <p className="text-3xl font-black">100%</p>
+                <p className="text-sm text-neutral-400">Clean finish</p>
+              </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-[3rem]" />
-            <img
-              src="/images/driveway-after.jpg.png"
-              className="relative h-[560px] w-full object-cover rounded-[2rem] shadow-2xl border border-white/10"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white text-slate-950 px-8 md:px-12 py-28">
-        <div className="max-w-7xl mx-auto">
-          <p className="uppercase tracking-[6px] text-blue-600 font-bold text-sm">
-            Before & After
-          </p>
-
-          <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tight">
-            See the difference.
-          </h2>
-
-          <div className="mt-12 relative h-[650px] rounded-[2rem] overflow-hidden shadow-2xl border">
-            <img
-              src="/images/driveway-before.jpg.png"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-
-            <div
-              className="absolute inset-0 overflow-hidden border-r-4 border-white"
-              style={{ width: `${sliderPosition}%` }}
-            >
-              <img
-                src="/images/driveway-after.jpg.png"
-                className="h-full w-[calc(100vw-6rem)] max-w-none object-cover"
-              />
-            </div>
-
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={sliderPosition}
-              onChange={(e) => setSliderPosition(Number(e.target.value))}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize"
-            />
-
-            <div
-              className="absolute top-0 h-full w-1 bg-white pointer-events-none"
-              style={{ left: `${sliderPosition}%` }}
-            />
-
-            <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white text-slate-950 h-16 w-16 rounded-full flex items-center justify-center font-black shadow-xl pointer-events-none"
-              style={{ left: `${sliderPosition}%` }}
-            >
-              ↔
-            </div>
+          <div className="rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-neutral-900">
+           <img
+  src="/images/driveway-after.jpg.png"
+  alt="Finished landscaping work"
+  className="h-[520px] w-full object-cover"
+/>
           </div>
         </div>
       </section>
 
-      <section className="px-8 md:px-12 py-28">
-        <div className="max-w-7xl mx-auto">
-          <p className="uppercase tracking-[6px] text-blue-400 font-bold text-sm">
+      <section className="px-6 py-20 md:px-12 bg-white text-black">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-green-700 font-bold uppercase tracking-widest">
             Services
           </p>
-
-          <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tight">
-            Built for Maine properties.
+          <h2 className="mt-3 text-4xl md:text-6xl font-black">
+            Yard work handled right.
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-5 mt-12">
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service}
-                className="group border border-white/10 bg-white/5 rounded-[2rem] p-8 hover:bg-white hover:text-slate-950 transition duration-300"
+                className="rounded-3xl border border-neutral-200 p-8 shadow-sm hover:shadow-xl transition"
               >
-                <h3 className="text-2xl font-black">{service}</h3>
-                <p className="text-gray-300 group-hover:text-slate-600 mt-5 leading-relaxed">
-                  Reliable outdoor service for homeowners around Bucksport.
+                <p className="text-2xl font-black">{service}</p>
+                <p className="mt-3 text-neutral-600">
+                  Clean, reliable work with attention to detail from start to
+                  finish.
                 </p>
               </div>
             ))}
@@ -157,77 +106,132 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white text-slate-950 px-8 md:px-12 py-28">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="uppercase tracking-[6px] text-blue-600 font-bold text-sm">
-              Free Estimate
+      <section id="work" className="px-6 py-24 md:px-12 bg-neutral-950">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-green-400 font-bold uppercase tracking-widest">
+              Before / After
             </p>
-
-            <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tight">
-              Need lawn care around Bucksport?
+            <h2 className="mt-3 text-4xl md:text-6xl font-black">
+              Drag the slider to see the difference.
             </h2>
-
-            <p className="text-gray-600 text-xl mt-6 leading-relaxed">
-              Call Andy&apos;s Lawn & Landscape or send a quick message about
-              your yard, cleanup, mulch, or trimming job.
-            </p>
-
-            <a
-              href="tel:2076595940"
-              className="inline-block mt-8 bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-500 transition"
-            >
-              Call (207) 659-5940
-            </a>
           </div>
 
-          <form className="bg-slate-100 rounded-[2rem] p-8 grid gap-4 shadow-xl">
-            <input className="p-4 rounded-xl border" placeholder="Your name" />
-            <input className="p-4 rounded-xl border" placeholder="Phone number" />
-            <input className="p-4 rounded-xl border" placeholder="Service needed" />
-            <textarea
-              className="p-4 rounded-xl border"
-              placeholder="Tell us about the job"
-              rows={5}
-            />
-            <button className="bg-slate-950 text-white p-4 rounded-full font-black hover:bg-blue-600 transition">
-              Request Free Estimate
-            </button>
-          </form>
+          <div className="relative mt-12 h-[600px] overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900">
+  <img
+    src="/images/driveway-after.jpg.png"
+    alt="After lawn care"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div
+    className="absolute inset-0 overflow-hidden"
+    style={{ width: `${slider}%` }}
+  >
+    <img
+      src="/images/driveway-before.jpg.png"
+      alt="Before lawn care"
+      className="h-full w-[100vw] max-w-none object-cover"
+    />
+  </div>
+
+  <div
+    className="absolute top-0 h-full w-1 -translate-x-1/2 bg-white"
+    style={{ left: `${slider}%` }}
+  />
+
+  <input
+    type="range"
+    min="0"
+    max="100"
+    value={slider}
+    onChange={(e) => setSlider(Number(e.target.value))}
+    className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
+  />
+
+  <div className="absolute left-6 top-6 rounded-full bg-black/70 px-4 py-2 text-sm font-bold">
+    BEFORE
+  </div>
+  <div className="absolute right-6 top-6 rounded-full bg-black/70 px-4 py-2 text-sm font-bold">
+    AFTER
+  </div>
+</div>
+        
         </div>
       </section>
 
-      <section className="px-8 md:px-12 py-28">
-        <div className="max-w-7xl mx-auto">
-          <p className="uppercase tracking-[6px] text-blue-400 font-bold text-sm">
-            Reviews
-          </p>
+      <section className="px-6 py-24 md:px-12 bg-neutral-900">
+        <div className="mx-auto max-w-7xl grid gap-8 md:grid-cols-3">
+          <div className="rounded-3xl bg-white/5 p-8 border border-white/10">
+            <h3 className="text-2xl font-black">Fast estimates</h3>
+            <p className="mt-3 text-neutral-300">
+              Call or text and get a clear price without the runaround.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/5 p-8 border border-white/10">
+            <h3 className="text-2xl font-black">Clean work</h3>
+            <p className="mt-3 text-neutral-300">
+              Every job is finished with clean edges, cleanup, and detail.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-white/5 p-8 border border-white/10">
+            <h3 className="text-2xl font-black">Local and reliable</h3>
+            <p className="mt-3 text-neutral-300">
+              Serving Bucksport and nearby Maine towns with dependable service.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tight">
-            Trusted locally.
+      <section className="px-6 py-24 md:px-12 bg-white text-black">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl md:text-6xl font-black">
+            What customers say.
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             {reviews.map((review) => (
-              <div key={review} className="bg-white/5 border border-white/10 rounded-[2rem] p-8">
-                <p className="text-yellow-400 text-xl">★★★★★</p>
-                <p className="text-gray-300 mt-5 leading-relaxed">“{review}”</p>
+              <div key={review} className="rounded-3xl bg-neutral-100 p-8">
+                <p className="text-yellow-500 text-xl">★★★★★</p>
+                <p className="mt-5 text-neutral-700 leading-relaxed">
+                  “{review}”
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer className="bg-black text-white px-8 md:px-12 py-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+      <section className="px-6 py-24 md:px-12 bg-green-500 text-black">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-5xl md:text-7xl font-black">
+            Ready to clean up your property?
+          </h2>
+          <p className="mt-6 text-xl">
+            Call Andy today for lawn care, mulching, trimming, and cleanup.
+          </p>
+          <a
+            href="tel:2076595940"
+            className="mt-10 inline-block rounded-full bg-black px-10 py-5 text-lg font-black text-white"
+          >
+            Call (207) 659-5940
+          </a>
+        </div>
+      </section>
+
+      <footer className="bg-black px-6 py-10 md:px-12">
+        <div className="mx-auto max-w-7xl flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="text-2xl font-black">Andy&apos;s Lawn & Landscape</h3>
-            <p className="text-gray-400 mt-2">
-              Lawn care, mulching, hedge trimming, and leaf cleanup in Bucksport, Maine.
+            <h3 className="text-2xl font-black">
+              Andy&apos;s Lawn & Landscape
+            </h3>
+            <p className="text-neutral-400 mt-2">
+              Lawn care, mulching, hedge trimming, and cleanup in Bucksport,
+              Maine.
             </p>
           </div>
 
-          <div className="text-gray-300">
+          <div className="text-neutral-400">
             <p>Bridge Street, Bucksport, ME</p>
             <p className="mt-2">(207) 659-5940</p>
             <p className="mt-2">Website demo built by Atlas</p>
@@ -237,7 +241,7 @@ export default function Home() {
 
       <a
         href="tel:2076595940"
-        className="fixed bottom-6 right-6 bg-blue-600 text-white px-6 py-4 rounded-full font-black shadow-2xl hover:bg-blue-500 transition"
+        className="fixed bottom-6 right-6 rounded-full bg-green-500 px-6 py-4 font-black text-black shadow-2xl"
       >
         📞 Call Andy
       </a>
